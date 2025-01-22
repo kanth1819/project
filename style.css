@@ -11,10 +11,40 @@ body {
   font-style: normal;
   background-color: bisque;
 }
-
-li a{
+h1{
+  color: antiquewhite;  
+}
+li a {
     text-decoration: none;
-    color: black;
+    color:bisque;
 }
 
-header 
+li a:hover{
+  color:gold;
+  font-weight:400
+}
+
+
+header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(70, 67, 67);
+  height: 10vh;
+}
+
+.list li{
+  display: inline-block;
+  font-weight: 300;
+  margin-inline: 15px;
+ 
+}
+
+button{
+  padding: 5px;
+  border:2px solid bisque;
+  border-radius: 35px;
+  background-color:rgb(70, 67, 67);
+  color:  bisque;
+
+}
