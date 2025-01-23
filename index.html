@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    /* header navigation*/
+<!-- created nav header -->
     <section id="1">
         <div class="fix">
     <header>
@@ -22,12 +22,12 @@
                 <li><a href="#4">CONTACT</a></li>
             </ul>
         </nav>
-        <a  class="raq" href="#"><button>REQUEST A QUOTE</button></a>
+        <a  class="raq" href="#5"><button>REQUEST A QUOTE</button></a>
     
     </header>
 </div>
 
-/* content in home section*/
+<!-- home content -->
     <div>
      <div class="content">
         <h2 class="wel">HI,<br>WELCOME TO OUR SITE</h2>
@@ -41,8 +41,8 @@
 </section>
 <br><br><br><br><br><br><br><br><br><br>
 
-/*about us page*/
 
+<!--about us -->
 <section id="2">
     <div class="about">
         <div class="box">
@@ -55,7 +55,7 @@
 </section>
 <br><br><br><br><br><br>
 
-/*our products page*/
+<!-- our products -->
 <section id="3">
    
     <h2 class="prod">OUR PRODUCTS</h2>
@@ -105,6 +105,7 @@
 
 <br><br><br><br><br><br><br><br>
 
+<!-- contact us -->
 <section id="4">
     <div class="con">
         <div class="connect">
@@ -124,18 +125,21 @@
 
 <br><br><br><br><br><br><br><br>
 
-<section>
+<!-- request a quote -->
+<section id="5">
     <div class="table">
-        <h2>Your Requirement</h2>
-        <div>
+        <h2>Your Requirement</h2><br>
+        <div class="form">
             <label for="name">Your Name</label>
-            <input type="text" id="name" placeholder="Enter Your Name"><br><br>
+            <input type="text" id="name" placeholder="Enter Your Name" required><br><br>
             <label for="tel">Your Mobile</label>
-            <input type="tel" id="tel" placeholder="Enter Your Number"><br><br>
+            <input type="tel" id="tel" placeholder="Enter Your Number" required><br><br>
             <label for="mail">Your Email</label>
-            <input type="email" id="mail" placeholder="Enter Your E-mail"><br><br>
+            <input type="email" id="mail" placeholder="Enter Your E-mail" required><br><br>
             <label for="message">Your Requirement</label>
-            <textarea name="message" id="message" placeholder="Your Message" rows="10" cols="21"></textarea>
+            <textarea name="message" id="message" placeholder="Your Message" rows="8" cols="28" required></textarea><br><br>
+            <button type="submit" class="primary">Submit</button>
+            <button type="reset" class="primary">Reset</button>
         </div>
     </div>
 </section>
