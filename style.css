@@ -11,6 +11,7 @@ body {
   font-style: normal;
   background-color: bisque;
 }
+
 h1{
   color: antiquewhite;  
 }
@@ -21,7 +22,7 @@ li a {
 
 li a:hover{
   color:gold;
-  font-weight:400
+  font-weight:400;
 }
 
 
@@ -41,10 +42,74 @@ header{
 }
 
 button{
-  padding: 5px;
+  padding: 8px;
   border:2px solid bisque;
   border-radius: 35px;
   background-color:rgb(70, 67, 67);
   color:  bisque;
+}
 
+button:hover{
+  font-weight: 400;
+  background-color:bisque;
+  color:  rgb(70, 67, 67);
+}
+
+.content{
+  margin-top: 15%;
+  max-width: 600px;
+  margin-left: 80px;
+}
+
+.wel{
+  color: rgb(70, 67, 67);
+}
+
+.par{
+  color: rgb(70, 67, 67);
+  font-weight: 300;
+}
+
+.photo{
+  position: absolute;
+  right: 0;
+  bottom: 20%;
+  align-items: center;
+
+}
+
+.about{
+  border: 5px solid rgb(70, 67, 67);
+  border-radius: 20px;
+  margin: 20px;
+  background-color:bisque;
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  max-width: 100%;
+    max-height: 900px;
+}
+
+
+.box{
+  
+   
+    padding: 50px;
+    width: 250px;
+    flex-basis: 50%;
+    max-width: 900px;
+    max-height: 800px;
+}
+
+.heading{
+text-align: center;
+text-decoration: underline;
+}
+
+.para{
+  font-weight: 400;
+  border: 2px;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: beige;
 }
