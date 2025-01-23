@@ -195,4 +195,49 @@ text-decoration: underline;
 .rate{
   font-weight: 300;
   font-size: larger;
-}*
+}
+
+
+/* contact section*/
+
+.con {
+  display: flex;
+  flex-wrap: wrap; 
+  border: 2px solid rgb(70, 67, 67);
+  border-radius: 20px;
+  margin: 3%;
+  padding: 20px; 
+  justify-content: space-between; 
+}
+
+.con div {
+  
+  padding: 20px;
+}
+
+.con div h2 {
+  color: rgb(70, 67, 67);
+  text-align: center;
+}
+
+.con div p {
+  font-weight: 400;
+  color: rgb(70, 67, 67);
+}
+
+.connect {
+  color: rgb(70, 67, 67);
+  background-color: beige;
+  border: 2px solid beige;
+  border-radius: 20px;
+  font-size: 20px;
+  margin-left: 150px;
+  max-width: 450px; 
+}
+
+.con img{
+  position: absolute;
+  margin-left: 700px;
+  max-width: 500px;
+  max-height: 500px;
+}
