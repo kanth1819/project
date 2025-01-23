@@ -211,7 +211,6 @@ text-decoration: underline;
 }
 
 .con div {
-  
   padding: 20px;
 }
 
@@ -240,4 +239,18 @@ text-decoration: underline;
   margin-left: 700px;
   max-width: 500px;
   max-height: 500px;
+}
+
+input,
+textarea {
+  flex-wrap: wrap;
+  display: block;
+  font: inherit;
+  color: inherit;
+}
+
+.table { 
+  border: 2px solid rgb(70, 67, 67);
+  text-align: center;
+  justify-content: space-around;
 }
