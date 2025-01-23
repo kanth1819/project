@@ -4,7 +4,11 @@
   margin: 0;
   padding: 0;
 }
+html{
+  scroll-behavior: smooth;
+}
 
+/* Navigation section*/
 body {
   font-family: "Poppins", serif;
   font-weight: 100;
@@ -55,6 +59,18 @@ button:hover{
   color:  rgb(70, 67, 67);
 }
 
+/* make position as fixed section*/
+.fix header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(70, 67, 67); 
+  z-index: 1000; 
+}
+
+/* home section*/
+
 .content{
   margin-top: 15%;
   max-width: 600px;
@@ -70,6 +86,8 @@ button:hover{
   font-weight: 300;
 }
 
+
+/* style image section*/
 .photo{
   position: absolute;
   right: 0;
@@ -78,6 +96,9 @@ button:hover{
 
 }
 
+/* about section*/
+
+/* main class in about*/
 .about{
   border: 5px solid rgb(70, 67, 67);
   border-radius: 20px;
@@ -85,31 +106,93 @@ button:hover{
   background-color:bisque;
   display: flex;
   padding: 10px;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: right;
   max-width: 100%;
-    max-height: 900px;
+  max-height: 900px;
 }
 
-
+/* box class section*/
 .box{
-  
-   
     padding: 50px;
     width: 250px;
     flex-basis: 50%;
     max-width: 900px;
     max-height: 800px;
+  
 }
 
+/* style the heading section*/
 .heading{
-text-align: center;
+text-align: left;
 text-decoration: underline;
 }
 
+/* style paragraph section*/
 .para{
   font-weight: 400;
   border: 2px;
   border-radius: 20px;
   padding: 20px;
   background-color: beige;
+
 }
+
+/* style image section*/
+.left-img{
+  position:absolute;
+  left: 100px;
+  max-width: 900px;
+  max-height: 450px;
+  padding: 10px;
+}
+
+
+/* style product section*/
+
+.contain{
+   padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.contain div{
+  margin-inline: 5px;
+  margin-top: 25px;
+  border: 2px solid  rgb(70, 67, 67);
+  border-radius: 10px;
+  justify-content: center;
+  padding: 20px;
+    width: 300px;
+    flex-basis: 20%;
+}
+
+.contain div:hover ,
+.contain div:hover .dress,
+.contain div:hover .rate
+.contain div:hover .image{
+  background-color: rgb(70, 67, 67);
+  border-radius: 0%;
+  color: bisque;
+}
+
+.prod{
+  text-align: center;
+}
+
+.image{
+  width: 200px;
+  height: 200px;
+}
+
+.dress{
+  font-weight: 400;
+}
+
+.rate{
+  font-weight: 300;
+  font-size: larger;
+}*
