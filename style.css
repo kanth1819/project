@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -16,21 +16,20 @@ body {
   background-color: bisque;
 }
 
-h1{
-  color: antiquewhite;  
+h1 {
+  color: antiquewhite;
 }
 li a {
-    text-decoration: none;
-    color:bisque;
+  text-decoration: none;
+  color: bisque;
 }
 
-li a:hover{
-  color:gold;
-  font-weight:400;
+li a:hover {
+  color: gold;
+  font-weight: 400;
 }
 
-
-header{
+header {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -38,25 +37,24 @@ header{
   height: 10vh;
 }
 
-.list li{
+.list li {
   display: inline-block;
   font-weight: 300;
   margin-inline: 15px;
- 
 }
 
-button{
+button {
   padding: 8px;
-  border:2px solid bisque;
+  border: 2px solid bisque;
   border-radius: 35px;
-  background-color:rgb(70, 67, 67);
-  color:  bisque;
+  background-color: rgb(70, 67, 67);
+  color: bisque;
 }
 
-button:hover{
+button:hover {
   font-weight: 400;
-  background-color:bisque;
-  color:  rgb(70, 67, 67);
+  background-color: bisque;
+  color: rgb(70, 67, 67);
 }
 
 /* make position as fixed section*/
@@ -65,45 +63,43 @@ button:hover{
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgb(70, 67, 67); 
-  z-index: 1000; 
+  background-color: rgb(70, 67, 67);
+  z-index: 1000;
 }
 
 /* home section*/
 
-.content{
+.content {
   margin-top: 15%;
   max-width: 600px;
   margin-left: 80px;
 }
 
-.wel{
+.wel {
   color: rgb(70, 67, 67);
 }
 
-.par{
+.par {
   color: rgb(70, 67, 67);
   font-weight: 300;
 }
 
-
 /* style image section*/
-.photo{
+.photo {
   position: absolute;
   right: 0;
   bottom: 20%;
   align-items: center;
-
 }
 
 /* about section*/
 
 /* main class in about*/
-.about{
+.about {
   border: 5px solid rgb(70, 67, 67);
   border-radius: 20px;
   margin: 20px;
-  background-color:bisque;
+  background-color: bisque;
   display: flex;
   padding: 10px;
   align-items: center;
@@ -113,45 +109,42 @@ button:hover{
 }
 
 /* box class section*/
-.box{
-    padding: 50px;
-    width: 250px;
-    flex-basis: 50%;
-    max-width: 900px;
-    max-height: 800px;
-  
+.box {
+  padding: 50px;
+  width: 250px;
+  flex-basis: 50%;
+  max-width: 900px;
+  max-height: 800px;
 }
 
 /* style the heading section*/
-.heading{
-text-align: left;
-text-decoration: underline;
+.heading {
+  text-align: left;
+  text-decoration: underline;
 }
 
 /* style paragraph section*/
-.para{
+.para {
   font-weight: 400;
   border: 2px;
   border-radius: 20px;
   padding: 20px;
   background-color: beige;
-
 }
 
 /* style image section*/
-.left-img{
-  position:absolute;
+.left-img {
+  position: absolute;
   left: 100px;
   max-width: 900px;
   max-height: 450px;
   padding: 10px;
 }
 
-
 /* style product section*/
 
-.contain{
-   padding: 20px;
+.contain {
+  padding: 20px;
   margin: 20px;
   border-radius: 20px;
   display: flex;
@@ -159,55 +152,53 @@ text-decoration: underline;
   justify-content: space-around;
 }
 
-.contain div{
+.contain div {
   margin-inline: 5px;
   margin-top: 25px;
-  border: 2px solid  rgb(70, 67, 67);
+  border: 2px solid rgb(70, 67, 67);
   border-radius: 10px;
   justify-content: center;
   padding: 20px;
-    width: 300px;
-    flex-basis: 20%;
+  width: 300px;
+  flex-basis: 20%;
 }
 
-.contain div:hover ,
+.contain div:hover,
 .contain div:hover .dress,
-.contain div:hover .rate
-.contain div:hover .image{
+.contain div:hover .rate .contain div:hover .image {
   background-color: rgb(70, 67, 67);
   border-radius: 0%;
   color: bisque;
 }
 
-.prod{
+.prod {
   text-align: center;
 }
 
-.image{
+.image {
   width: 200px;
   height: 200px;
 }
 
-.dress{
+.dress {
   font-weight: 400;
 }
 
-.rate{
+.rate {
   font-weight: 300;
   font-size: larger;
 }
-
 
 /* contact section*/
 
 .con {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   border: 2px solid rgb(70, 67, 67);
   border-radius: 20px;
   margin: 3%;
-  padding: 20px; 
-  justify-content: space-between; 
+  padding: 20px;
+  justify-content: space-between;
 }
 
 .con div {
@@ -231,15 +222,17 @@ text-decoration: underline;
   border-radius: 20px;
   font-size: 20px;
   margin-left: 150px;
-  max-width: 450px; 
+  max-width: 450px;
 }
 
-.con img{
+.con img {
   position: absolute;
   margin-left: 700px;
   max-width: 500px;
   max-height: 500px;
 }
+
+/* requirement section*/
 
 input,
 textarea {
@@ -248,7 +241,7 @@ textarea {
   color: inherit;
 }
 
-.table { 
+.table {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -257,26 +250,25 @@ textarea {
   max-width: 100%;
   justify-content: space-around;
   padding: auto;
-  margin:20px 20px 20px 20px;
+  margin: 20px 20px 20px 20px;
 }
 
-label{
+label {
   margin-left: 20%;
   font-weight: 500;
 }
 
-input{
+input {
   margin-left: 20%;
   font-weight: 300;
   width: 500px;
 }
-textarea{
+textarea {
   font-weight: 300;
   margin-left: 20%;
   width: 500px;
-
 }
-.form{
+.form {
   background-color: beige;
   display: flex;
   flex-direction: column;
@@ -285,7 +277,6 @@ textarea{
   width: 800px;
   height: 700px;
   padding: 10px;
-  
 }
 
 .primary {
