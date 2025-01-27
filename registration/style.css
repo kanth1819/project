@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Lexend+Giga:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    background-color: rgb(248, 221, 221);
+    margin: 0;
+    font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+#form{
+    padding: 20px;
+    width: 500px; 
+    margin-top: 12vh;
+    margin-left: 30vw;
+    background-color: rgb(92, 58, 58);
+    border-radius: 5px;
+   
+}
+
+h1{
+    text-align: center;
+    color:whitesmoke;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    margin-bottom: 15px;
+
+}
+
+.input input{
+    border-radius: 5px;
+    height: 20px;
+    margin-top: 5px;
+    padding: 6px;
+    border: 2px solid whitesmoke;
+}
+
+.input input:focus{
+    outline: 0;
+}
+
+.input.success input{
+    border-color: rgb(36, 240, 36);
+}
+
+.input.error input{
+    border-color: rgb(240, 36, 46);
+}
+
+.error{
+    color: rgb(250, 38, 38);
+    font-size: 15px;
+}
+
+
+
+.btn{
+    font-family:inherit;
+    margin-left: 15vw;
+    width: 80px;
+    height: 30px;
+    padding: auto;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.table-container {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}

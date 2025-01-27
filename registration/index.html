@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="valid.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <form action="#" id="form">
+            <h1>Registration Form</h1>
+            <div class="input">
+                <label for="fname">FIRST NAME</label>
+                <input type="text" id="fname" name="fname" placeholder="Enter Your First Name">
+                <div class="error"></div>
+            </div>
+            <div class="input">
+                <label for="lname">LAST NAME</label>
+                <input type="text" id="lname" placeholder="Enter Your Last Name">
+                <div class="error"></div>
+            </div>
+            <div class="input">
+                <label for="uname">USER NAME</label>
+                <input type="text" id="uname" placeholder="Enter Your User Name">
+                <div class="error"></div>
+            </div>
+            <div class="input">
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" placeholder="Enter Your E-mail">
+                <div class="error"></div>
+            </div>
+            <div class="input">
+                <label for="pass">PASSWORD</label>
+                <input type="password" id="pass" placeholder="Enter Your Password">
+                <div class="error"></div>
+            </div>
+            <div class="input">
+                <label for="cpassword">CONFIRM PASSWORD</label>
+                <input type="password" id="cpassword" placeholder="Confirm Password">
+                <div class="error"></div>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+    
+    <!-- Table to display submitted data -->
+    <div class="table-container">
+        <h2>Submitted Data</h2>
+        <table id="data-table" border="1" cellspacing="0" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>User Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
