@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="valid.js" defer></script>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
 </head>
 <body>
     <div class="container">
@@ -44,7 +43,7 @@
             <button type="submit" class="btn">Register</button>
         </form>
     </div>
-    
+
     <!-- Table to display submitted data -->
     <div class="table-container">
         <h2>Submitted Data</h2>
@@ -58,10 +57,13 @@
                 </tr>
             </thead>
             <tbody>
-                
+                <!-- Rows will be added dynamically by JavaScript -->
             </tbody>
         </table>
+        <button id="clear-data-btn" class="btn-clr clear-btn">Clear Data</button>
     </div>
-    
+
+
+    <script src="valid.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>

@@ -61,7 +61,18 @@ h1{
 .btn{
     font-family:inherit;
     margin-left: 15vw;
-    width: 80px;
+    width: fit-content;
+    height: 30px;
+    padding: auto;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.btn-clr{
+    font-family:inherit;
+    margin-left: 35vw;
+    margin-top: 10vh;
+    width: fit-content;
     height: 30px;
     padding: auto;
     border: 2px solid whitesmoke;
