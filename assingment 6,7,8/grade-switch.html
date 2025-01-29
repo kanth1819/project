@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Checker</title>
+    <script>
+        function checkGrade() {
+            
+            let mark1 = parseInt(document.getElementById('mark1').value);
+            let mark2 = parseInt(document.getElementById('mark2').value);
+            let mark3 = parseInt(document.getElementById('mark3').value);
+            let mark4 = parseInt(document.getElementById('mark4').value);
+            let mark5 = parseInt(document.getElementById('mark5').value);
+
+       
+            let totalMarks = mark1 + mark2 + mark3 + mark4 + mark5;
+
+            
+            switch (true) {
+                case (totalMarks > 450):
+                    alert("You scored grade A - Congratulations");
+                    break;
+                case (totalMarks > 300 && totalMarks <= 450):
+                    alert("You scored grade B - Good Job");
+                    break;
+                case (totalMarks > 250 && totalMarks <= 300):
+                    alert("You scored grade C - You can do better");
+                    break;
+                default:
+                    alert("Need to Work Hard");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Grade Checker</h1>
+    <form onsubmit="event.preventDefault(); checkGrade();">
+        <label for="mark1">Enter marks for Subject 1: </label>
+        <input type="number" id="mark1" required><br><br>
+
+        <label for="mark2">Enter marks for Subject 2: </label>
+        <input type="number" id="mark2" required><br><br>
+
+        <label for="mark3">Enter marks for Subject 3: </label>
+        <input type="number" id="mark3" required><br><br>
+
+        <label for="mark4">Enter marks for Subject 4: </label>
+        <input type="number" id="mark4" required><br><br>
+
+        <label for="mark5">Enter marks for Subject 5: </label>
+        <input type="number" id="mark5" required><br><br>
+
+        <button type="submit">Check Grade</button>
+    </form>
+</body>
+</html>

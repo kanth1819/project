@@ -12,4 +12,4 @@ function clearDisplay(){
 
 function calculate(){
     display.value = eval(display.value)
-}
+} 
