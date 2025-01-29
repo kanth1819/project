@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Slideshow</title>
+    <style>
+        /* CSS Styling for the Page */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .slideshow-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            width: 500px;
+            height: 499px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #slideshowImage {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px
+        }
+
+    
+        p {
+            font-size: 16px;
+            color: #555;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+
+        let currentImageIndex = 0;
+
+        function changeImage() {
+            
+            const images = [
+                'images/pexels-pixabay-39517.jpg',
+                'images/pexels-pixabay-460775.jpg',
+                'images/pexels-pixabay-46216.jpg',
+                'images/pexels-pixabay-68507.jpg',
+                'images/pexels-pixabay-69776.jpg'
+            ];
+
+            
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+
+            
+            document.getElementById('slideshowImage').src = images[currentImageIndex];
+        }
+    </script>
+</head>
+<body>
+    <div class="slideshow-container">
+        <h1>Simple Image Slideshow</h1>
+        <img id="slideshowImage" src="images/pexels-pixabay-69776.jpg" alt="Slideshow Image" onclick="changeImage()">
+        <p>Click the image to change it.</p>
+    </div>
+</body>
+</html>
