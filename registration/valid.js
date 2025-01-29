@@ -12,9 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadDataFromLocalStorage();
 });
 
-
-
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -145,12 +142,14 @@ function saveDataToLocalStorage() {
     const lnameVal = lname.value.trim();
     const unameVal = uname.value.trim();
     const emailVal = email.value.trim();
+    const passVal = pass.value.trim();
 
     const user = {
         firstName: fnameVal,
         lastName: lnameVal,
         userName: unameVal,
         email: emailVal,
+        password: passVal
     };
 
     // Get existing data from localStorage
