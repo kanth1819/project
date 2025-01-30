@@ -1,40 +1,66 @@
-table, tr, td {
-    border: 2px solid rgb(0, 0, 0);
-    border-collapse: collapse;
-    width: 600px;
-    height: 200px;
-    background-color: rgb(241, 241, 107);
-}
-
-td {
-    text-align: center;
-    vertical-align: middle;
-}
-
-.cir {
-    width: 100px;
-    height: 100px;
-    background-color: beige;
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .row1, .row2, .inner-box1, .inner-box2, .inner-box3{
+    display: flex;
+  }
+  .box1, .box2{
+    height: 150px;
+    background-color: black;
+    aspect-ratio: 1/1;
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .innercircel, .circle1, .circle2, .circle3 {
+    height: 120px;
+    aspect-ratio: 1/1;
+    background-color: white;
     border-radius: 50%;
-    margin: auto;
-    transition: background-color 0.3s ease;
-}
-
-.cir:hover {
-    background-color: rgb(0, 255, 98);  /* Row 1 hover effect (Green) */
-}
-
-.circle{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: rgb(22, 23, 24);
-    margin: auto;
-}
-
-.circle:hover {
-    background-color: lightblue;
-}
-
-
-
+  }
+  
+  .row1:hover .innercircel{
+   background-color: green; 
+  }
+  
+  .colored{
+    background-color: orange
+  }
+  
+  .inner-box1, .inner-box2, .inner-box3{
+    position: absolute;
+    margin: -16px;
+    display: none
+    
+  }
+  
+  .inner-box2{
+    margin-left: -168px;
+  /*   display: flex; */ 
+  }
+  
+  .inner-box3{
+    margin-left: -320px;
+  /*   display: flex;  */
+  }
+  
+  
+  .circle1:hover .inner-box1 {
+    display:flex;
+    pointer-events:none;
+  }
+  
+  
+  .circle2:hover .inner-box2 {
+    display:flex;
+    pointer-events:none;
+    
+  }
+  
+  
+  .circle3:hover .inner-box3 {
+    display:flex;
+    pointer-events:none;
+  }

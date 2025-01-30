@@ -6,18 +6,17 @@
     <title>Multiplication Table</title>
     <script>
         function printTable() {
-            // Get the input number
             let number = parseInt(document.getElementById('number').value);
             let result = "";
 
             // Using for loop
-            result += "<h3>Using For Loop:</h3>";
+            
             for (let i = 1; i <= 10; i++) {
                 result += `${number} x ${i} = ${number * i}<br>`;
             }
+        
 
             // Using while loop
-            result += "<h3>Using While Loop:</h3>";
             let i = 1;
             while (i <= 10) {
                 result += `${number} x ${i} = ${number * i}<br>`;
@@ -25,14 +24,12 @@
             }
 
             // Using do-while loop
-            result += "<h3>Using Do-While Loop:</h3>";
             i = 1;
             do {
                 result += `${number} x ${i} = ${number * i}<br>`;
                 i++;
             } while (i <= 10);
 
-            // Display the result
             document.getElementById('output').innerHTML = result;
         }
     </script>

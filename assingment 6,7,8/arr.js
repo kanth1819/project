@@ -7,4 +7,4 @@ const FirstElement = (arr, n = 1) => {
 const array = [10, 0, 5, 3];
 
 console.log(FirstElement(array)); 
-console.log(FirstElement(array, 4));
+console.log(FirstElement(array,2));
