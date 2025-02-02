@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulls and Cows Game</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+        }
+        input {
+             margin: 10px;
+           padding: 5px;
+           font-size: 16px; 
+            }
+        button { 
+            padding: 10px 15px;
+            font-size: 16px; 
+             cursor: pointer; 
+          }
+        #result, #attempts { 
+            margin-top: 20px; 
+            font-size: 18px; 
+        }
+        #history { 
+            margin-top: 20px; 
+            font-size: 16px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Bulls and Cows Game</h1>
+    <p>Enter a 4-digit number with unique digits:</p>
+    <input type="text" id="userGuess" maxlength="4">
+    <button onclick="checkGuess()">Guess</button>
+    <p id="result"></p>
+    <p id="attempts">Attempts: 0</p>
+    
+    <h3>Previous Attempts:</h3>
+    <ul id="history"></ul> 
+    <script>
+        let secretNumber = generateNumber();
+        let attempts = 0;
+
+        function generateNumber() {
+            let digits = [];
+            while (digits.length < 4) {
+                let digit = Math.floor(Math.random() * 10);
+                if (!digits.includes(digit)) {
+                    digits.push(digit);
+                }
+            }
+            return digits.join('');
+        }
+
+        function checkGuess() {
+            let guess = document.getElementById('userGuess').value;
+            if (!/^\d{4}$/.test(guess) || new Set(guess).size !== 4) {
+                alert("Please enter a 4-digit number with unique digits.");
+                return;
+            }
+            
+            attempts++;
+            let bulls = 0, cows = 0;
+            for (let i = 0; i < 4; i++) {
+                if (guess[i] === secretNumber[i]) {
+                    bulls++;
+                } else if (secretNumber.includes(guess[i])) {
+                    cows++;
+                }
+            }
+            
+            document.getElementById('result').innerText = `Bulls: ${bulls}, Cows: ${cows}`;
+            document.getElementById('attempts').innerText = `Attempts: ${attempts}`;
+
+            
+            let history = document.getElementById('history');
+            let attemptEntry = document.createElement('li');
+            attemptEntry.innerText = `Guess: ${guess} → Bulls: ${bulls}, Cows: ${cows}`;
+            history.appendChild(attemptEntry);
+
+            if (bulls === 4) {
+                alert(`Congratulations! You guessed the number ${secretNumber} in ${attempts} attempts.`);
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -61,11 +61,14 @@
             let validUser = users.find(user => user.userName === username && user.password === password);
 
             if (validUser) { 
-                window.location.href = 'welcome.html'; // Redirect to welcome page
+                window.location.href = 'welcome.html'; 
             } else {
                 alert('Invalid username or password. Please try again.');
             }
         });
+
+        console.log();
+        
     </script>
 </body>
 </html>
