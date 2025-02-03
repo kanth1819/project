@@ -6,8 +6,9 @@ const email = document.querySelector('#email');
 const pass = document.querySelector('#pass');
 const cpassword = document.querySelector('#cpassword');
 const tableBody = document.querySelector('#data-table tbody');
+const secretKey = "your-secret-key"; 
 
-
+// Load existing data from localStorage on page load
 document.addEventListener('DOMContentLoaded', () => {
     loadDataFromLocalStorage();
 });
@@ -18,72 +19,64 @@ form.addEventListener('submit', (e) => {
     
     const isConfirmed = confirm('Are you sure you want to submit?');
     if (isConfirmed) {
-        validation(); 
+        validation();
         if (formIsValid()) {
-            addDataToTable(); 
-            saveDataToLocalStorage(); 
-            form.reset(); 
+            addDataToTable();
+            saveDataToLocalStorage();
+            form.reset();
             alert('Form submitted successfully!');
         }
     }
 });
 
-// Perform validation
 function validation() {
-    const fnameVal = fname.value.trim();
-    const lnameVal = lname.value.trim();
-    const unameVal = uname.value.trim();
-    const emailVal = email.value.trim();
-    const passVal = pass.value.trim();
-    const cpasswordVal = cpassword.value.trim();
+    let isValid = true;
 
-    let isValid = true; 
-
-    if (fnameVal === '') {
+    if (fname.value.trim() === '') {
         setError(fname, 'First name is required');
         isValid = false;
     } else {
         setSuccess(fname);
     }
 
-    if (lnameVal === '') {
+    if (lname.value.trim() === '') {
         setError(lname, 'Last name is required');
         isValid = false;
     } else {
         setSuccess(lname);
     }
 
-    if (unameVal === '') {
+    if (uname.value.trim() === '') {
         setError(uname, 'Username is required');
         isValid = false;
     } else {
         setSuccess(uname);
     }
 
-    if (emailVal === '') {
+    if (email.value.trim() === '') {
         setError(email, 'Email is required');
         isValid = false;
-    } else if (!validmail(emailVal)) {
+    } else if (!validMail(email.value.trim())) {
         setError(email, 'Enter a valid email');
         isValid = false;
     } else {
         setSuccess(email);
     }
 
-    if (passVal === '') {
+    if (pass.value.trim() === '') {
         setError(pass, 'Password is required');
         isValid = false;
-    } else if (passVal.length < 8) {
+    } else if (pass.value.trim().length < 8) {
         setError(pass, 'Password must be at least 8 characters');
         isValid = false;
     } else {
         setSuccess(pass);
     }
 
-    if (cpasswordVal === '') {
+    if (cpassword.value.trim() === '') {
         setError(cpassword, 'Confirm password is required');
         isValid = false;
-    } else if (cpasswordVal !== passVal) {
+    } else if (cpassword.value.trim() !== pass.value.trim()) {
         setError(cpassword, 'Passwords do not match');
         isValid = false;
     } else {
@@ -95,89 +88,60 @@ function validation() {
     }
 }
 
-
 function setError(element, message) {
-    const inputGrp = element.parentElement;
-    const errorElement = inputGrp.querySelector('.error');
-
+    const errorElement = element.nextElementSibling;
     errorElement.innerText = message;
-    inputGrp.classList.add('error');
-    inputGrp.classList.remove('success');
+    element.style.borderColor = "red";
 }
-
 
 function setSuccess(element) {
-    const inputGrp = element.parentElement;
-    const errorElement = inputGrp.querySelector('.error');
-
+    const errorElement = element.nextElementSibling;
     errorElement.innerText = '';
-    inputGrp.classList.add('success');
-    inputGrp.classList.remove('error');
+    element.style.borderColor = "green";
 }
 
+function validMail(email) {
+    return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+}
 
-const validmail = (email) => {
-    return String(email)
-        .toLowerCase()
-        .match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/);
-};
-
-// Check if the form is valid
 function formIsValid() {
     const inputs = document.querySelectorAll('.input');
     for (let input of inputs) {
-        if (input.classList.contains('error')) {
+        if (input.style.borderColor === "red") {
             return false;
         }
     }
     return true;
 }
 
-// Add data to the table
 function addDataToTable() {
-    const fnameVal = fname.value.trim();
-    const lnameVal = lname.value.trim();
-    const unameVal = uname.value.trim();
-    const emailVal = email.value.trim();
-
     const row = document.createElement('tr');
     row.innerHTML = `
-        <td>${fnameVal}</td>
-        <td>${lnameVal}</td>
-        <td>${unameVal}</td>
-        <td>${emailVal}</td>
-        <td>********</td> 
+        <td>${fname.value.trim()}</td>
+        <td>${lname.value.trim()}</td>
+        <td>${uname.value.trim()}</td>
+        <td>${email.value.trim()}</td>
+        <td>(Encrypted)</td>
     `;
-
     tableBody.appendChild(row);
 }
 
-
 function saveDataToLocalStorage() {
-    const fnameVal = fname.value.trim();
-    const lnameVal = lname.value.trim();
-    const unameVal = uname.value.trim();
-    const emailVal = email.value.trim();
-    const passVal = pass.value.trim();
-
-    
-    const hashedPass = CryptoJS.SHA256(passVal).toString();
+    const encryptedPass = CryptoJS.AES.encrypt(pass.value.trim(), secretKey).toString();
 
     const user = {
-        firstName: fnameVal,
-        lastName: lnameVal,
-        userName: unameVal,
-        email: emailVal,
-        password: hashedPass 
+        firstName: fname.value.trim(),
+        lastName: lname.value.trim(),
+        userName: uname.value.trim(),
+        email: email.value.trim(),
+        password: encryptedPass
     };
 
-    
     let users = JSON.parse(localStorage.getItem('users')) || [];
-    users.push(user); 
-    localStorage.setItem('users', JSON.stringify(users)); 
+    users.push(user);
+    localStorage.setItem('users', JSON.stringify(users));
 }
 
-// Load data from localStorage and display in the table
 function loadDataFromLocalStorage() {
     const users = JSON.parse(localStorage.getItem('users')) || [];
     users.forEach(user => {
@@ -187,18 +151,19 @@ function loadDataFromLocalStorage() {
             <td>${user.lastName}</td>
             <td>${user.userName}</td>
             <td>${user.email}</td>
-            <td>********</td> 
+            <td>${user.password}</td>
         `;
         tableBody.appendChild(row);
     });
 }
 
+function decryptPassword(encryptedPass) {
+    const decryptedPass = CryptoJS.AES.decrypt(encryptedPass, secretKey).toString(CryptoJS.enc.Utf8);
+    return decryptedPass;
+}
 
-const clearDataBtn = document.querySelector('#clear-data-btn');
-
-clearDataBtn.addEventListener('click', () => {
-    const isConfirmed = confirm('Are you sure you want to clear all data? This action cannot be undone.');
-    if (isConfirmed) {
+document.querySelector('#clear-data-btn').addEventListener('click', () => {
+    if (confirm('Are you sure you want to clear all data? This action cannot be undone.')) {
         localStorage.removeItem('users');
         tableBody.innerHTML = '';
         alert('All data has been cleared.');
