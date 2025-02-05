@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce</title>
     <link rel="stylesheet" href="style.css">
+    <script src="cart.js" defer></script>
+
 </head>
 <body>
 
@@ -20,9 +22,11 @@
                 <li><a href="#2">ABOUT US</a></li>
                 <li><a href="#3">PRODUCTS</a></li>
                 <li><a href="#4">CONTACT</a></li>
+                <button><a href="cart.html">CART (<span id="cart-count">0</span>)</a></button>
             </ul>
         </nav>
-        <a  class="raq" href="#5"><button>REQUEST A QUOTE</button></a>
+        
+       
     
     </header>
 </div>
@@ -62,44 +66,53 @@
     <div class="contain">
         <div>
             <img src="img/51-pLhPHoBL._AC_UL320_.jpg" class="image">
-            <h2 class="dress">SHIRT</h2>
+            <h2 class="dress">CASUAL SHIRT</h2>
             <p class="rate">Rs .999/-</p>
+            <button class="add-to-cart" data-name="CASUAL SHIRT" data-price="999">Add to Cart</button>
         </div>
         <div>
             <img src="img/61jP8mz3XIL._AC_UL320_.jpg" class="image">
-            <h2 class="dress">SHIRT</h2>
-            <p class="rate">Rs .999/-</p>
+            <h2 class="dress">WHITE SHIRT</h2>
+            <p class="rate">Rs .799/-</p>
+            <button class="add-to-cart" data-name="WHITE SHIRT" data-price="799">Add to Cart</button>
         </div>
         <div>
             <img src="img/61S5nUPVufL._AC_UL320_.jpg" class="image">
-            <h2 class="dress">T-SHIRTS</h2>
-            <p class="rate">Rs .999/-</p>
+            <h2 class="dress">T-SHIRTS GREEN</h2>
+            <p class="rate">Rs .599/-</p>
+            <button class="add-to-cart" data-name="T-SHIRTS GREEN" data-price="599">Add to Cart</button>
         </div>
         <div>
             <img src="img/61v4Fb1ZpTL._AC_UL320_.jpg" class="image">
-            <h2 class="dress">T-SHIRTS</h2>
-            <p class="rate">Rs .999/-</p>
+            <h2 class="dress">T-SHIRT BLACK</h2>
+            <p class="rate">Rs .499/-</p>
+            <button class="add-to-cart" data-name="T-SHIRT BLACK" data-price="499">Add to Cart</button>
         </div>
         <div>
             <img src="img/61YqacacUQL._AC_UL320_.jpg" class="image">
-            <h2 class="dress">T-SHIRTS</h2>
-            <p class="rate">Rs .999/-</p>
+            <h2 class="dress">T-SHIRT GREY</h2>
+            <p class="rate">Rs .699/-</p>
+            <button class="add-to-cart" data-name="T-SHIRT GREY" data-price="699">Add to Cart</button>
         </div>
         <div>
             <img src="img/61yWnrT3eQL._AC_UL320_.jpg" class="image">
-            <h2 class="dress">SHIRT</h2>
-            <p class="rate">Rs .999/-</p>
+            <h2 class="dress">BLUE SHIRT</h2>
+            <p class="rate">Rs .399/-</p>
+            <button class="add-to-cart" data-name="BLUE SHIRT" data-price="399">Add to Cart</button>
         </div>
         <div>
             <img src="img/71aWHfPYuhL._AC_UL320_.jpg" class="image">
-            <h2 class="dress">SHIRT</h2>
-            <p class="rate">Rs .999/-</p>
+            <h2 class="dress">BEIGE SHIRT</h2>
+            <p class="rate">Rs .459/-</p>
+            <button class="add-to-cart" data-name="BEIGE SHIRT" data-price="459">Add to Cart</button>
         </div>
         <div>
             <img src="img/71Jukhvw8DL._AC_UL320_.jpg" class="image">
-            <h2 class="dress">T-SHIRTS</h2>
-            <p class="rate">Rs .999/-</p>
+            <h2 class="dress">POLO T-SHIRTS</h2>
+            <p class="rate">Rs .780/-</p>
+            <button class="add-to-cart" data-name="POLO T-SHIRTS" data-price="780">Add to Cart</button>
         </div>
+        
     </div>
 </section>
 
@@ -122,29 +135,5 @@
         <img src="img/vecteezy_contact-us-or-the-customer-support-hotline-people-connect_27244724.png" alt="">
     </div>
 </section>
-
-<br><br><br><br><br><br><br><br>
-
-<!-- request a quote -->
-<section id="5">
-    <div class="table">
-        <h2>Your Requirement</h2><br>
-        <div class="form">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" placeholder="Enter Your Name" required><br><br>
-            <label for="tel">Your Mobile</label>
-            <input type="tel" id="tel" placeholder="Enter Your Number" required><br><br>
-            <label for="mail">Your Email</label>
-            <input type="email" id="mail" placeholder="Enter Your E-mail" required><br><br>
-            <label for="message">Your Requirement</label>
-            <textarea name="message" id="message" placeholder="Your Message" rows="8" cols="28" required></textarea><br><br>
-            <button type="submit" class="primary">Submit</button>
-            <button type="reset" class="primary">Reset</button>
-        </div>
-    </div>
-</section>
-
-
-
 </body>
 </html>

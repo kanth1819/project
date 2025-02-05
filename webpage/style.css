@@ -46,9 +46,10 @@ header {
 button {
   padding: 8px;
   border: 2px solid bisque;
-  border-radius: 35px;
+  border-radius: 10px;
   background-color: rgb(70, 67, 67);
   color: bisque;
+ 
 }
 
 button:hover {
@@ -282,4 +283,8 @@ textarea {
 .primary {
   margin-left: 38%;
   width: 200px;
+}
+a{
+  text-decoration: none;
+  color: beige;
 }

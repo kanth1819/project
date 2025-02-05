@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .main{
+           
+            border: 2px solid black;
+            width: 500px;
+            height: 500px;
+            margin-top: 50px;
+            margin-left: 32%;
+
+        }
+        h1{
+            text-align: center;
+            color:rgb(70, 67, 67) ;
+        }
+        #cart-items{
+            color: beige;
+            text-align:left;
+            gap: 40px;
+            margin-left: 20px;
+            margin-right: 20px;
+            font-weight: 500;
+            background-color: rgb(70, 67, 67);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        #clear-cart{
+            margin-top: 20px;
+           margin-left: 40%;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="main">
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <button id="clear-cart">Clear Cart</button>
+    <script src="cart.js"></script>
+</div>
+</body>
+</html>

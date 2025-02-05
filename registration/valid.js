@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    
+    // Show confirmation dialog
     const isConfirmed = confirm('Are you sure you want to submit?');
     if (isConfirmed) {
         validation();
