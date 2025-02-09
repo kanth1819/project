@@ -62,3 +62,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const cartBtn = document.querySelector("#cart-count").parentElement; // Select the CART button
+
+    if (cartBtn) {
+        cartBtn.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default navigation
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    window.location.href = "cart.html"; // Allow access
+                } else {
+                    alert("You need to log in first!");
+                    window.location.href = "login.html"; // Redirect to login
+                }
+            });
+        });
+    }
+});
+
