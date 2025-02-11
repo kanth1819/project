@@ -1,49 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .main{
-           
-            border: 2px solid black;
-            width: 500px;
-            height: 500px;
-            margin-top: 50px;
-            margin-left: 32%;
 
-        }
-        h1{
-            text-align: center;
-            color:rgb(70, 67, 67) ;
-        }
-        #cart-items{
-            color: beige;
-            text-align:left;
-            gap: 40px;
-            margin-left: 20px;
-            margin-right: 20px;
-            font-weight: 500;
-            background-color: rgb(70, 67, 67);
-            border-radius: 10px;
-            padding: 20px;
-        }
-        #clear-cart{
-            margin-top: 20px;
-           margin-left: 40%;
-        }
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Cart</title>
+            <link rel="stylesheet" href="style.css">
+            <script src="cart.js" defer></script>
+            <style>
+                 .main{
+           
+           border: 2px solid black;
+           width: 500px;
+           height: 500px;
+           margin-top: 50px;
+           margin-left: 32%;
+
+       }
+       h1{
+        margin-top: 8%;
+           text-align: center;
+           color:rgb(70, 67, 67) ;
+       }
+       #cart-items{
+           color: beige;
+           text-align:left;
+           gap: 40px;
+           margin-left: 33%;
+           width: 500px;
+           font-weight: 500;
+           background-color: rgb(70, 67, 67);
+           border-radius: 10px;
+           padding: 20px;
+       }
+       #clear-cart{
+           margin-top: 20px;
+          margin-left: 47%;
+       }
+       
+            </style>
+        </head>
+        <body>
+        
+            <h1>Your Cart</h1>
+            <div class="container">
+            <div id="cart-items"></div>
+            <button id="clear-cart">Clear Cart</button>
+        </div>
+        
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const cartItemsContainer = document.getElementById("cart-items");
+                    const clearCartBtn = document.getElementById("clear-cart");
+        
+                    function getCart() {
+                        return JSON.parse(localStorage.getItem("cart")) || [];
+                    }
+        
+                    function displayCart() {
+                        const cart = getCart();
+                        cartItemsContainer.innerHTML = ""; // Clear previous content
+        
+                        if (cart.length === 0) {
+                            cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+                            return;
+                        }
+        
+                        cart.forEach((item, index) => {
+                            const cartItem = document.createElement("div");
+                            cartItem.innerHTML = `
+                                <p>${item.name} - Rs.${item.price}</p>
+                                <button onclick="removeItem(${index})">Remove</button>
+                            `;
+                            cartItemsContainer.appendChild(cartItem);
+                        });
+                    }
+        
+                    window.removeItem = function(index) {
+                        let cart = getCart();
+                        cart.splice(index, 1);
+                        localStorage.setItem("cart", JSON.stringify(cart));
+                        displayCart();
+                    };
+        
+                    clearCartBtn.addEventListener("click", () => {
+                        localStorage.removeItem("cart");
+                        displayCart();
+                    });
+        
+                    displayCart();
+                });
+            </script>
+        
+        </body>
+        </html>
+           
        
 
-    </style>
-</head>
-<body>
-    <div class="main">
-    <h1>Your Cart</h1>
-    <div id="cart-items"></div>
-    <button id="clear-cart">Clear Cart</button>
-    <script src="cart.js"></script>
-</div>
-</body>
-</html>
+  
