@@ -1,8 +1,6 @@
-// Import Firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
 
-// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyB0JFiMfF2QTSU9efUNwMlzvRGRDY8dG8A",
     authDomain: "e-commerce-948b8.firebaseapp.com",
@@ -13,25 +11,23 @@ const firebaseConfig = {
     measurementId: "G-LGKNJ2DG7H"
   };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Get form element
 const form = document.getElementById("form");
 
 form.addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form from refreshing
+    event.preventDefault(); 
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            alert("✅ Account Created! Please Login.");
-            window.location.href = "login.html"; // Redirect to login page
+            alert(" Account Created! Please Login.");
+            window.location.href = "login.html";
         })
         .catch((error) => {
-            alert("❌ Error: " + error.message);
+            alert("Error: " + error.message);
         });
 });
