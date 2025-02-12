@@ -13,27 +13,29 @@ const firebaseConfig = {
     measurementId: "G-LGKNJ2DG7H"
   };
 
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 // Get login form
-const loginForm = document.getElementById("login-form");
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.getElementById("login-form");
 
-loginForm.addEventListener("submit", async function (event) {
-    event.preventDefault(); // Prevent page reload
+    if (loginForm) {
+        loginForm.addEventListener("submit", async (event) => {
+            event.preventDefault(); // Prevent page reload
 
-    const email = document.getElementById("login-email").value;
-    const password = document.getElementById("login-password").value;
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
 
-    try {
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        alert("✅ Login Successful!");
-
-        // Redirect to home page
-        window.location.href = "index.html";
-
-    } catch (error) {
-        alert("❌ Login Failed: " + error.message);
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                alert("✅ Login Successful!");
+                window.location.href = "index.html"; // Redirect to home page
+            } catch (error) {
+                alert("❌ Login Failed: " + error.message);
+            }
+        });
     }
 });
